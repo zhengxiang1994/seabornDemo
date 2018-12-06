@@ -43,6 +43,17 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # adding a hue semantic
+# fmri = sns.load_dataset("fmri")
+# sns.relplot(x="timepoint", y="signal", hue="event", kind="line", data=fmri)
+# plt.show()
+
+# add a style semantic
+# fmri = sns.load_dataset("fmri")
+# sns.relplot(x="timepoint", y="signal", hue="region", style="event", kind="line", data=fmri)
+# plt.show()
+
+# using markers instead of dashes
 fmri = sns.load_dataset("fmri")
-sns.relplot(x="timepoint", y="signal", hue="event", kind="line", data=fmri)
+sns.relplot(x="timepoint", y="signal", hue="region", style="event", dashes=False, markers=True, kind="line", data=fmri)
 plt.show()
+
