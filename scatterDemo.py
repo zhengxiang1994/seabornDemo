@@ -12,6 +12,9 @@ print(tips)
 # a simplest example of scatter
 # sns.relplot(x="total_bill", y="tip", data=tips)
 
+# the above example is equal to the following example:
+# sns.scatterplot(x="total_bill", y="tip", data=tips)
+
 # While the points are plotted in two dimensions, another dimension can be added to the plot by coloring the points
 # according to a third variable. In seaborn, this is referred to as using a “hue semantic”, because the color of the
 # point gains meaning
