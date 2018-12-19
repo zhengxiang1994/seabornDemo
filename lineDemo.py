@@ -12,6 +12,13 @@ import matplotlib.pyplot as plt
 # g.fig.autofmt_xdate()
 # plt.show()
 
+# the above example is equal to the following example:
+# # cussum(): return the cumulative sum of the elements along the given axis
+# df = pd.DataFrame(dict(time=np.arange(500), value=np.random.randn(500).cumsum()))
+# # print(df)
+# sns.lineplot(x="time", y="value", data=df)
+# plt.show()
+
 # Because lineplot() assumes that you are most often trying to draw y as a function of x,
 # the default behavior is to sort the data by the x values before plotting. However, this can be disabled
 # df = pd.DataFrame(np.random.randn(500, 2).cumsum(0), columns=["x", "y"])
@@ -53,7 +60,15 @@ import matplotlib.pyplot as plt
 # plt.show()
 
 # using markers instead of dashes
-fmri = sns.load_dataset("fmri")
-sns.relplot(x="timepoint", y="signal", hue="region", style="event", dashes=False, markers=True, kind="line", data=fmri)
+# fmri = sns.load_dataset("fmri")
+# sns.relplot(x="timepoint", y="signal", hue="region", style="event", dashes=False, markers=True, kind="line", data=fmri)
+# plt.show()
+
+# The default colormap and handling of the legend in lineplot() also depends on whether the hue semantic is
+# categorical or numeric
+dots = sns.load_dataset("dots").query("align == 'dots'")
+# print(dots)
+sns.relplot(x="time", y="firing_rate", hue="coherence", style="choice", kind="line", data=dots)
 plt.show()
+
 
